@@ -4,17 +4,53 @@
   box-sizing: border-box;
 }
 
-.container {
-display: grid;
-grid-template-columns: repeat(16, 30px);
+header {
+  height: auto;
+  background-color: grey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.divs {
+button {
+  margin: 15px;
+  background-color: blue;
+  color: white;
+  font-size: large;
+  font-weight: bolder;
+  padding: 5px;
+  border-radius: 10px;
+}
 
-  background-color: black;
-  height: 30px;
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  
+
+}
+
+.container {
+
+  background-color: gray;
+  display: flex;
+  height: 50vh;
+  width: 60vw;
+  max-width: 350px;
+
+  
+}
+
+.divsx {
+
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.divsy {
   border: white 1px solid;
-  
-  
-  
+  flex-grow: 1;
+
 }
