@@ -49,9 +49,16 @@ button {
 }
 
 .divsy {
-  background-color: green;
+  
   width: 100%;
   height: 100%;
-  border: white 1px solid;
+  border: black 1px solid;
   border-radius: 15%;
+}
+
+.dark {
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  border-radius: 15%
 }
