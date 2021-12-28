@@ -35,9 +35,14 @@ function changeSquareColorOnHover() {
         if (event.target.firstChild) {
           const darker = event.target.querySelector(".dark");
           let darkNumber = parseFloat(darker.style.opacity);
+          if (darkNumber === 1) {
+            return;
+          } else {
           darkNumber += 0.1;
           darkNumber = darkNumber.toString();
-          darker.style.opacity = darkNumber;
+          darker.style.opacity = Math.round(darkNumber*10)/10;
+          console.log(darkNumber);
+          }
         } else {
           const dark = document.createElement("div");
           dark.classList.add("dark");
