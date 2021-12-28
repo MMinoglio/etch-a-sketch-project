@@ -1,3 +1,13 @@
+function askForSize() {
+  let size = window.prompt('Insert a grid size smaller than 100');
+  if (size > 100) {
+    alert('Incorrect Size');
+    askForSize();
+  } else {
+    return size;
+  }
+}
+
 function createGrid (size) {
 
   const container = document.querySelector('.container');
@@ -18,11 +28,25 @@ function createGrid (size) {
 function changeSquareColorOnHover () {
   const divsy = document.querySelectorAll('.divsy');
   divsy.forEach(div => {
-    div.addEventListener("mouseenter", function(event){
+    div.addEventListener("mouseenter", event =>{
       event.target.style.backgroundColor = "purple";
     }) 
   });
 }
 
-createGrid(16);
-changeSquareColorOnHover ()
+const button = document.querySelector('button');
+button.addEventListener('click', e => {
+  const container = document.querySelector('.container');
+  const body = document.querySelector('body')
+  console.log(container)
+  
+  while (container.firstChild) {
+    container.removeChild(container.lastChild);
+  }
+  body.appendChild(container);
+  createGrid(askForSize())
+  changeSquareColorOnHover ();
+  
+})
+createGrid(askForSize());
+changeSquareColorOnHover ();
